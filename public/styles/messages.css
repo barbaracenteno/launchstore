@@ -1,0 +1,31 @@
+@keyframes hidemessage {
+   to {
+        top: -50px;
+        opacity: 0;
+    }
+}
+
+:root {
+    --primary-color: #fd951f;
+}
+
+.messages {
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+    position: absolute;
+    width: 100%;
+    color:white;
+    top: 0;
+    opacity: 1;
+    animation: hidemessage 500ms 5s ease-in-out forwards;
+
+}
+
+.messages.error {
+    background: var(--primary-color);
+}
+
+.messages.success {
+    background: var(--primary-color);
+}

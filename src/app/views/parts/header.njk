@@ -2,7 +2,7 @@
 
     <div class="container">
         
-        <a href="">
+        <a href="/">
             <div class="logo">
                 <h1>LauchStore</h1>
                 <h2>Seu espaço para comprar e vender</h2>
@@ -28,12 +28,34 @@
                         Novo Anúncio
                     </a>
                 </li>
-                <li>
-                    <a href="/accounts">
+
+                <li class="accounts">
+                    <a href="/users/login">
                         <i class="material-icons">account_circle</i>
                         Minha conta
                     </a>
+                    
+
+                    {% if session.userId %}
+                    <ul class="submenu">
+                        <li>
+                            <a href="/users">Configurações</a>
+                        </li>
+                        <li>
+                            <a href="/buying">Meus Pedidos</a>
+                        </li>
+                        <li>
+                            <a href="/selling">Meus Anúncios</a>
+                        </li>
+                        <li>
+                            <form action="/users/logout" method="POST">
+                                <button>Sair</button>
+                            </form>
+                        </li>
+                    </ul>
+                    {% endif %}
                 </li>
+
             </ul>
         </nav>
 

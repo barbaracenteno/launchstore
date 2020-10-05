@@ -35,8 +35,9 @@ module.exports = {
             return res.send('Por favor, envie no mínimo 1 imagem ')
         }
         
+        const data = { ...req.body, user_id: req.session.userId };
 
-        let results = await Product.create(req.body)
+        let results = await Product.create(data)
         const productId = results.rows[0].id
 
         const filesPromise = req.files.map(file => File.create({...file, product_id: productId }))
